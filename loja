@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWear | Moda Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="cabecalho__container">
+            <h1 class="cabecalho__logo">&lt;CodeWear/&gt;</h1>
+            <nav class="cabecalho__nav">
+                <a href="#produtos" class="cabecalho__link">Produtos</a>
+                <a href="#sobre" class="cabecalho__link">Sobre</a>
+                <a href="#contato" class="cabecalho__link">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner__conteudo">
+            <h2 class="banner__titulo">Vista o seu código</h2>
+            <p class="banner__texto">Estilo e conforto para devs que transformam linhas de código em soluções.</p>
+            <a href="#produtos" class="banner__botao">Ver Coleção</a>
+        </div>
+    </section>
+
+    <main class="produtos" id="produtos">
+        <h2 class="produtos__titulo">Lançamentos</h2>
+        <div class="produtos__grid">
+            <article class="cartao">
+                <div class="cartao__imagem cartao__imagem--1"></div>
+                <h3 class="cartao__titulo">Camiseta Dev Senior</h3>
+                <p class="cartao__descricao">100% Algodão. Não encolhe, igual ao seu deploy perfeito em produção.</p>
+                <span class="cartao__preco">R$ 89,90</span>
+                <button class="cartao__botao">Comprar</button>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__imagem cartao__imagem--2"></div>
+                <h3 class="cartao__titulo">Moletom Dark Mode</h3>
+                <p class="cartao__descricao">Proteção ideal contra o ar-condicionado e bugs de última hora.</p>
+                <span class="cartao__preco">R$ 199,90</span>
+                <button class="cartao__botao">Comprar</button>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__imagem cartao__imagem--3"></div>
+                <h3 class="cartao__titulo">Boné CSS Flexbox</h3>
+                <p class="cartao__descricao">Ajuste perfeito centralizado com justify-content: center.</p>
+                <span class="cartao__preco">R$ 69,90</span>
+                <button class="cartao__botao">Comprar</button>
+            </article>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape__texto">&copy; 2026 CodeWear - Projeto desenvolvido na didática Alura.</p>
+    </footer>
+
+</body>
+</html>
+:root {
+    --cor-principal: #111827;
+    --cor-secundaria: #2563eb;
+    --cor-detalhes: #60a5fa;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #334155;
+    --cor-card: #ffffff;
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-principal);
+    padding: 1.5rem 2rem;
+}
+
+.cabecalho__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho__logo {
+    color: var(--cor-detalhes);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.cabecalho__link {
+    color: #f1f5f9;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.cabecalho__link:hover {
+    color: var(--cor-detalhes);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.banner__titulo {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner__texto {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.banner__botao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.banner__botao:hover {
+    background-color: #1d4ed8;
+}
+
+/* Produtos */
+.produtos {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.produtos__titulo {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--cor-principal);
+}
+
+.produtos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Cartão do Produto */
+.cartao {
+    background-color: var(--cor-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+}
+
+.cartao__imagem {
+    height: 180px;
+    background-color: #cbd5e1;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.cartao__titulo {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-principal);
+}
+
+.cartao__descricao {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.cartao__preco {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+.cartao__botao {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.cartao__botao:hover {
+    opacity: 0.9;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-principal);
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
